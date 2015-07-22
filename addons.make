@@ -1,0 +1,9 @@
+ofxGui
+ofxOpenCv
+ofxOsc
+ofxXmlSettings
+ofxCv
+ofxMidi
+ofxTrueTypeFontUC
+ofxTween
+ofxUI
