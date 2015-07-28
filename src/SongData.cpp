@@ -24,17 +24,21 @@ void SongData::update()
 		currentTime = ofGetElapsedTimef() - startTime;
 	}
 	
-	for (auto it : words)
+	for (int i = 0;i < words.size();i++)
 	{
-		if (it->update(currentTime) && it->newLine)//新規ラインのワードが有効になった時
-			for (auto rm : words)
-				if (rm->isViewing && rm != it) rm->disappear();//現在表示されてるワードを逃がす
+		if (words[i]->update(currentTime) && words[i]->newLine)//新規ラインのワードが有効になった時
+			for (int j = 0;j < words.size();j++)
+			{
+				if (words[j]->isViewing && words[j] != words[i])
+					words[j]->disappear();//現在表示されてるワードを逃がす
+			}
 	}
+	
 }
 
 void SongData::draw()
 {
-	for (auto it : words) it->draw();
+	for (int i = 0;i < words.size();i++) words[i]->draw();
 }
 
 void SongData::setWord(float time, string word, ofVec2f pos, bool isNewLine)
