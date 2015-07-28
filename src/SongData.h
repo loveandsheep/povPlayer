@@ -11,7 +11,7 @@
 
 #include "ofMain.h"
 #include "wordData.h"
-#include "ofxTrueTypeFontUC.h"
+#include "ofxFTGL.h"
 
 class SongData{
 public:
@@ -28,7 +28,7 @@ public:
 	float startTime;
 	float currentTime;
 	vector< ofPtr<wordData> > words;
-	ofPtr<ofxTrueTypeFontUC> font;
+	ofPtr<ofxFTGLFont> font;
 	
 };
 

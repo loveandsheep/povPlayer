@@ -10,7 +10,7 @@
 
 void SongData::setup(string fontPath)
 {
-	font = ofPtr<ofxTrueTypeFontUC>(new ofxTrueTypeFontUC);
+	font = ofPtr<ofxFTGLFont>(new ofxFTGLFont);
 	font->loadFont(fontPath, 10);
 	
 	currentTime = 0.0;

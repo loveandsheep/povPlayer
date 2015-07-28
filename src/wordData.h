@@ -10,7 +10,7 @@
 #define __povPlayer__wordData__
 
 #include "ofMain.h"
-#include "ofxTrueTypeFontUC.h"
+#include "ofxFTGL.h"
 
 class wordData
 {
@@ -23,7 +23,7 @@ public:
 		zRot = 0.0;
 	}
 	
-	ofPtr<ofxTrueTypeFontUC> fontPtr;
+	ofPtr<ofxFTGLFont> fontPtr;
 	string	word;
 	ofVec2f pos;
 	float	scale;
