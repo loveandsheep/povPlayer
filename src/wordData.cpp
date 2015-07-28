@@ -29,7 +29,7 @@ void wordData::draw()
 		ofPushMatrix();
 		ofTranslate(pos);
 		ofRotateZ(zRot);
-		glScaled(scale, scale, scale);
+		glScalef(scale, scale, scale);
 		fontPtr->drawString(word, -bRect.width/2.0, bRect.height/2.0);
 		ofPopMatrix();
 	}
