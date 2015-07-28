@@ -78,7 +78,7 @@
 # incorporated directly into the final executable application binary.
 # TODO: should this be a default setting?
 # PROJECT_LDFLAGS=-Wl,-rpath=./libs
-PROJECT_LDFLAGS += -lwiringPi
+PROJECT_LDFLAGS += -lwiringPi /addons/ofxFTGL/libs/FTGL/lib/linux/libftgl.a
 
 ################################################################################
 # PROJECT DEFINES
