@@ -10,6 +10,7 @@
 #define __povPlayer__ViewManager__
 
 #include "ofMain.h"
+#include "ofxKsmrRPiDotStar.h"
 
 class viewManager{
 public:
@@ -26,6 +27,10 @@ public:
 	
 	ofSerial serial;
 	ofImage testRec;
+	
+	ofPixels pix;
+	int targetLine;
+	ofxKsmrRPiDotStar dotstar;
 };
 
 #endif /* defined(__povPlayer__ViewManager__) */

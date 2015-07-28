@@ -1,31 +1,40 @@
 #include "ofApp.h"
 
 //--------------------------------------------------------------
-void ofApp::setup(){
+void ofApp::setup()
+{
+	
 	vMan.setup(64, 64);
-	ofSetFrameRate(15);
+	songMan.setup();
 }
 
 //--------------------------------------------------------------
-void ofApp::update(){
+void ofApp::update()
+{
+	songMan.update();
 	vMan.update();
 }
 
 //--------------------------------------------------------------
-void ofApp::draw(){
+void ofApp::draw()
+{
 	ofBackground(20);
 	
 	vMan.buffer.begin();
-	ofClear(0, 0, 0);
-
-	ofSetColor(255);
-	ofCircle(ofGetMouseX(), ofGetMouseY()+30, 30);
+	{
+		ofClear(0, 0, 0);
+		
+		ofSetColor(255, 0, 0);
+		ofCircle(ofGetMouseX(), ofGetMouseY(), 30);
+		ofSetColor(0, 0, 255);
+		ofCircle(ofGetMouseY(), ofGetMouseX(), 20);
+		
+		songMan.draw();
+	}
 	vMan.buffer.end();
 	
-	vMan.sendBuffer();
-	vMan.draw();
+	ofSetColor(255);
 	vMan.drawBuf();
-	vMan.testRec.draw(70,0);
 }
 
 //--------------------------------------------------------------

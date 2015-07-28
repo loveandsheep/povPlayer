@@ -17,6 +17,10 @@ void viewManager::setup(int w, int h)
 	
 	buffer.allocate(setting);
 	testRec.allocate(w, h, OF_IMAGE_COLOR);
+	
+	pix.allocate(w, h, 3);
+	targetLine = 30;
+	dotstar.setup(h);
 }
 
 void viewManager::update()
@@ -26,7 +30,10 @@ void viewManager::update()
 
 void viewManager::draw()
 {
-
+	buffer.readToPixels(pix);
+	for (int i = 0;i < pix.getHeight();i++)
+		dotstar.setColor(i, pix.getColor(targetLine, i));
+	
 }
 
 void viewManager::drawBuf()

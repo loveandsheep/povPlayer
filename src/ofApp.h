@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "ViewManager.h"
+#include "SongManager.h"
 
 class ofApp : public ofBaseApp{
 
@@ -20,5 +21,6 @@ public:
 	void dragEvent(ofDragInfo dragInfo);
 	void gotMessage(ofMessage msg);
 
+	SongManager songMan;
 	viewManager vMan;
 };
